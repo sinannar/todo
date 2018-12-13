@@ -1,6 +1,6 @@
 # Todo FE & BE
 
-This project is created to experiment with dotnet and angular containerisation
+This project is created to experiment with dotnet wepapi and angular containerisation
 
 ## FE
 
