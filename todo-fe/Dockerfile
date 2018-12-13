@@ -18,4 +18,3 @@ COPY --from=node /usr/src/app/dist/todo-fe /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
-# https://malcoded.com/posts/angular-docker
