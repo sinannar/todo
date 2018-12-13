@@ -1,8 +1,8 @@
-﻿﻿{
+﻿{
   "runtime": "Default",
   "swaggerGenerator": {
     "fromSwagger": {
-      "url": "http://localhost:5001/swagger/v1/swagger.json",
+      "url": "https://localhost:5001/swagger/v1/swagger.json",
       "output": null
     }
   },
