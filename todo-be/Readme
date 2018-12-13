@@ -1,0 +1,7 @@
+D:\source-azure-experiments\todo\todo-be [master ≡ +0 ~1 -0 !]> dotnet add package Swashbuckle.AspNetCore --version 4.0.1
+
+https://www.talkingdotnet.com/add-swagger-to-asp-net-core-2-0-web-api/
+
+https://localhost:5001/api/values
+
+https://localhost:5001/swagger/index.html
