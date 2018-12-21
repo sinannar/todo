@@ -16,7 +16,7 @@ namespace todo_be
 {
     public class Startup
     {
-                private const string DefaultCorsPolicyName = "localhost";
+        private const string DefaultCorsPolicyName = "localhost";
 
         public Startup(IConfiguration configuration)
         {
