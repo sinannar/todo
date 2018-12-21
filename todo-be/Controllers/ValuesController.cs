@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace todo_be.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ValuesController : Controller
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<string>> List()
         {
             return new string[] { "value1", "value2" };
         }
