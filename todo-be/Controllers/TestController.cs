@@ -11,9 +11,9 @@ namespace todo_be.Controllers
     public class TestController : Controller
     {
         [HttpPost]
-        public IEnumerable<string> Test()
+        public List<string> Test()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2" }.ToList();
         }
 
     }

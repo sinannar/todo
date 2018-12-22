@@ -12,9 +12,9 @@ namespace todo_be.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> List()
+        public List<string> List()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2" }.ToList();
         }
 
         // GET api/values/5
