@@ -47,3 +47,5 @@ https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get
 - docker tag todo-fe todosinannar.azurecr.io/todo/fe
 - docker push todosinannar.azurecr.io/todo/fe
 - go to https://todo-fe-sinannar.azurewebsites.net/
+
+this is what I will try next  https://blogs.msdn.microsoft.com/atverma/2018/09/16/azure-kubernetes-service-aks-deploying-angular-asp-net-core-and-sql-server-on-linux/ 
