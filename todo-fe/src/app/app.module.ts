@@ -8,7 +8,7 @@ import { TestServiceProxy, ValuesServiceProxy } from '../shared/service-proxies/
 import { API_BASE_URL as api_url } from '../shared/service-proxies/service-proxies';
 
 export function getRemoteServiceBaseUrl(): string {
-  return 'http://localhost:5000';
+  return 'https://todo-be-sinannar.azurewebsites.net';
 }
 
 @NgModule({
