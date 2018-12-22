@@ -38,12 +38,12 @@ open browser to check http://localhost:5000/api/values
 https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli
 
 ### For BE image that created as todo-be into todosinannar.azurecr.io registry
-docker tag todo-be todosinannar.azurecr.io/todo/be
-docker push todosinannar.azurecr.io/todo/be
-https://todo-be-sinannar.azurewebsites.net/swagger/index.html
+- docker tag todo-be todosinannar.azurecr.io/todo/be
+- docker push todosinannar.azurecr.io/todo/be
+- go to https://todo-be-sinannar.azurewebsites.net/swagger/index.html
 
 ### For FE image that created as todo-fe into todosinannar.azurecr.io registry
-change the remote server address to https://todo-be-sinannar.azurewebsites.net
-docker tag todo-fe todosinannar.azurecr.io/todo/fe
-docker push todosinannar.azurecr.io/todo/fe
-https://todo-fe-sinannar.azurewebsites.net/
+- change the remote server address to https://todo-be-sinannar.azurewebsites.net
+- docker tag todo-fe todosinannar.azurecr.io/todo/fe
+- docker push todosinannar.azurecr.io/todo/fe
+- go to https://todo-fe-sinannar.azurewebsites.net/
