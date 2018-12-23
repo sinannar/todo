@@ -1,0 +1,85 @@
+# todo-fe                           latest               965dbdfd0538        3 hours ago         18.4MB
+# todosinannar.azurecr.io/todo/fe   latest               965dbdfd0538        3 hours ago         18.4MB
+# <none>                            <none>               6086a0608918        3 hours ago         721MB
+# todo-be                           latest               2775ffcb15d4        3 hours ago         269MB
+# todosinannar.azurecr.io/todo/be   latest               2775ffcb15d4        3 hours ago         269MB
+# <none>                            <none>               414fd7dbb68e        3 hours ago         1.87GB
+# microsoft/dotnet                  aspnetcore-runtime   0d704dd1eccf        39 hours ago        260MB
+# microsoft/dotnet                  sdk                  389d91a8617b        39 hours ago        1.74GB
+# node                              8.11.2-alpine        86b71ddd55fa        6 months ago        68MB
+# nginx                             1.13.12-alpine       ebe2c7c61055        8 months ago        18MB
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: todo-frontend
+    labels:
+        app: todo-frontend
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: todo-frontend
+    template:
+        metadata:
+            labels:
+                app: todo-frontend
+        spec:
+            containers:
+            -   name: frontend
+                # image: todosinannar.azurecr.io/todo/fe
+                image: todo-fe
+                ports:
+                -   containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: todo-backend
+    labels:
+        app: todo-backend
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: todo-backend
+    template:
+        metadata:
+            labels:
+                app: todo-backend
+        spec:
+            containers:
+            -   name: backend
+                # image: todosinannar.azurecr.io/todo/be
+                image: todo-be
+                ports:
+                -   containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-frontend
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: todo-frontend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-backend
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: todo-backend
