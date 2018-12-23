@@ -17,10 +17,18 @@ namespace todo_be
     public class Startup
     {
         private const string DefaultCorsPolicyName = "localhost";
-
+        private string feUrl;
+        private string beUrl;
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            feUrl = configuration.GetValue<string>("FrontEndBaseUrl");
+            beUrl = configuration.GetValue<string>("BackEndBaseUrl");
+            Console.WriteLine("=========================================================");
+            Console.WriteLine(feUrl);
+            Console.WriteLine(beUrl);
+            Console.WriteLine("=========================================================");
         }
 
         public IConfiguration Configuration { get; }

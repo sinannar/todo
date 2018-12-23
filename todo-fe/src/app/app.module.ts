@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TestServiceProxy, ValuesServiceProxy } from '../shared/service-proxies/service-proxies';
 import { API_BASE_URL as api_url } from '../shared/service-proxies/service-proxies';
+import { environment } from '../environments/environment';
 
 export function getRemoteServiceBaseUrl(): string {
-  return 'https://todo-be-sinannar.azurewebsites.net';
+  console.log(environment.frontEndBaseUrl);
+  console.log(environment.backEndBaseurl);
+  return environment.backEndBaseurl;
 }
 
 @NgModule({

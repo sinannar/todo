@@ -37,6 +37,9 @@ open browser to check http://localhost:5000/api/values
 ## Pushing docker images to azure container registry
 https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli
 
+- before pushing containers to registry, we need to login for that registry 
+- az acr login --name myregistry
+
 ### For BE image that created as todo-be into todosinannar.azurecr.io registry
 - docker tag todo-be todosinannar.azurecr.io/todo/be
 - docker push todosinannar.azurecr.io/todo/be
